@@ -11,7 +11,7 @@ on:
 
 jobs:
   tests:
-    name: "Python ${{ matrix.python-version }}"
+    name: "Python ${{ "{{ matrix.python-version }}" }}"
     runs-on: "ubuntu-20.04"
     env:
       USING_COVERAGE: '3.9'
@@ -33,7 +33,7 @@ jobs:
         uses: "conda-incubator/setup-miniconda@v2"
         with:
           auto-update-conda: true
-          python-version: "${{ matrix.python-version }}"
+          python-version: "${{ "{{ matrix.python-version }}" }}"
           channels: "conda-forge,anaconda"
       - name: "Install dependencies"
         run: |
@@ -44,7 +44,7 @@ jobs:
           python -m pip install --upgrade pip setuptools
           python -m pip install --upgrade pytest coverage[toml] tox tox-conda tox-gh-actions
 
-      - name: "Run tox targets for ${{ matrix.python-version }}"
+      - name: "Run tox targets for ${{ "{{ matrix.python-version }}" }}"
         run: |
           python -m pytest --version
           python -m tox -v -p 2 # Only use 2 CPUs so coverage-report runs after pytest
@@ -100,7 +100,7 @@ jobs:
         os: ["ubuntu-20.04"]
 
     name: "Verify dev env"
-    runs-on: "${{ matrix.os }}"
+    runs-on: "${{ "{{ matrix.os }}" }}"
 
     defaults:
       run:
