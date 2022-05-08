@@ -11,7 +11,7 @@ on:
 
 jobs:
   tests:
-    if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
+          #if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
     name: "Python ${{ matrix.python-version }}"
     runs-on: "ubuntu-20.04"
     env:
@@ -63,7 +63,7 @@ jobs:
           fail_ci_if_error: true
 
   package:
-    if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
+          #if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
     name: "Build & verify package"
     runs-on: "ubuntu-20.04"
 
@@ -97,7 +97,7 @@ jobs:
         run: "check-wheel-contents dist/*.whl"
 
   install-dev:
-    if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
+          #if: ${{ github.repository != 'lmmx/py-pkg-cc-template' }}
     strategy:
       matrix:
         os: ["ubuntu-20.04"]
