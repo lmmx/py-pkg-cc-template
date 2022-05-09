@@ -1,4 +1,4 @@
-#from pytest import mark, fixture
+# from pytest import mark, fixture
 
 import {{ cookiecutter.underscored }}
 
