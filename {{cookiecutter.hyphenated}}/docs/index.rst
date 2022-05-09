@@ -1,10 +1,10 @@
 .. {{ cookiecutter.hyphenated }} documentation master file, created by
-   sphinx-quickstart on Tue Jul 13 21:11:42 2021.
+   sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 {{ cookiecutter.hyphenated }}: {{ cookiecutter.description }}
-=====================================================
+{% for char in cookiecutter.hyphenated %}={% endfor %}=={% for char in cookiecutter.description %}={% endfor %}
 
 .. toctree::
     :maxdepth: 2
