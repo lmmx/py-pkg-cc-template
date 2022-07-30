@@ -20,7 +20,6 @@ CLASSIFIERS = [
     "Programming Language :: Python",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Topic :: Internet :: WWW/HTTP",
 ]
@@ -36,7 +35,7 @@ EXTRAS_REQUIRE = {
 EXTRAS_REQUIRE["dev"] = (
     EXTRAS_REQUIRE["tests"] + EXTRAS_REQUIRE["docs"] + ["pre-commit"]
 )
-PYTHON_REQUIRES = ">=3.9"
+PYTHON_REQUIRES = ">=3.10"
 LONG_DESCRIPTION = Path("README.md").read_text()
 PACKAGE_DATA = {"{{ cookiecutter.underscored }}": ["py.typed"]}
 
