@@ -55,6 +55,7 @@ jobs:
           python -m coverage combine
           python -m coverage xml
         if: "contains(env.USING_COVERAGE, matrix.python-version)"
+        continue-on-error: true
       - name: Upload coverage to Codecov
         if: "contains(env.USING_COVERAGE, matrix.python-version)"
         uses: "codecov/codecov-action@v1"
